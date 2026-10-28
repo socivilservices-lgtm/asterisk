@@ -1,0 +1,3 @@
+# Kamailio permissions address table (group 1). Load into /etc/kamailio/address.list
+# format: grp ip mask port proto
+# See modparam permissions address_file; replace with verified provider/client networks.
