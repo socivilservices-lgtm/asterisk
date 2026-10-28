@@ -24,8 +24,8 @@ if have openssl; then
 fi
 
 section "TLS handshake (Kamailio)"
-have openssl && echo | openssl s_client -connect "${KAMAILIO_HOST}:${TLS_PORT}" -tls1_2 2>/dev/null \
-  | grep -E "Protocol|Cipher|Verify return" || true
+if have openssl; then echo | openssl s_client -connect "${KAMAILIO_HOST}:${TLS_PORT}" -tls1_2 2>/dev/null \
+  | grep -E "Protocol|Cipher|Verify return"; fi
 
 section "Kamailio status"
 have kamctl && { kamctl stats shmem; kamctl stats tm; kamctl ul show 2>/dev/null | head -n 20; }
