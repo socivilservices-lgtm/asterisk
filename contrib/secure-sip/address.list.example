@@ -1,0 +1,4 @@
+# Kamailio permissions address table (group 1) - one example per line:
+# grp ip mask port proto
+# 1 203.0.113.50 32 0 any
+# 1 <callcentric_ip> 32 0 any
